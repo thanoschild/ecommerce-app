@@ -62,7 +62,6 @@ const updateProduct = expressAsyncHandler(async (req, res) => {
 
 const getCategoryProduct = expressAsyncHandler(async (req, res) => {
   const productCatagory = await product.distinct("category");
-  console.log("category: ", productCatagory);
   const productByCatagory = [];
   for (const category of productCatagory) {
     const products = await product.findOne({ category });
@@ -105,7 +104,6 @@ const searchProduct = expressAsyncHandler(async (req, res) => {
   const products = await product.find({
     $or: [{ ProductName: regex }, { category: regex }],
   });
-  console.log("query: ", query);
 
   res.status(200).json({
     data: products,
