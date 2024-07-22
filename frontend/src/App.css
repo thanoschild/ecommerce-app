@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply bg-slate-100
+}
+
+.customShadow {
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.userTable {
+    @apply bg-white 
+}
+
+.userTable th{
+    @apply border p-4 mt-0 text-white
+}
+
+.userTable td{
+    @apply border text-center text-base p-4
+}
+
+.scrollbar-none::-webkit-scrollbar{
+    display: none;
+}
