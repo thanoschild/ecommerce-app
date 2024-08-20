@@ -1,4 +1,4 @@
-const domain = "http://localhost:8000";
+const domain = import.meta.env.VITE_BACKEND_URL;
 
 const summaryApi = {
     signUp: {
