@@ -24,6 +24,10 @@ app.use(cookieParser());
 app.use("/api/users", require("./routes/userRoute"));
 app.use("/api/products", require("./routes/productRoute"));
 app.use("/api/cart", require("./routes/cartRoute"));
+app.use("/api/payment", require("./routes/paymentRoute"));
+app.use("/api/order", require("./routes/orderRoute"));
+
+
 app.use(errorHandler);
 
 // Start server

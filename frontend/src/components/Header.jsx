@@ -93,7 +93,7 @@ function Header() {
 
               {menuDisplay && user?.role === ROLE.ADMIN && (
                 <div className="absolute hidden md:block bg-white bottom-0 top-11 h-fit p-2 shadow-lg rounded">
-                  <nav>
+                  <nav className="flex flex-col">
                     {user?.role === ROLE.ADMIN && (
                       <Link
                         to="/admin-panel/all-products"
@@ -103,6 +103,7 @@ function Header() {
                         Admin Panel
                       </Link>
                     )}
+                    <Link to="/order" className="whitespace-nowrap hover:bg-slate-200 p-2 rounded" onClick={() => setMenuDisplay((prev) => !prev)}>Order</Link>
                   </nav>
                 </div>
               )}

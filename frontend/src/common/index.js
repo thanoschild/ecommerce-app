@@ -76,8 +76,16 @@ const summaryApi = {
     filterProduct: {
         url: `${domain}/api/products/filter-product`,
         method: "post"
+    },
+    payment: {
+        url: `${domain}/api/payment/checkout`,
+        method: "post"
+    },
+    order: {
+        url: `${domain}/api/order/order-details`,
+        method: "get"
     }
 }
 
 export default summaryApi;
-// filter-product
+// order-details

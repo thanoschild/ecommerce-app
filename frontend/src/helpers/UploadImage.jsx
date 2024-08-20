@@ -1,4 +1,5 @@
-const url = `https://api.cloudinary.com/v1_1/dkpkykbfx/image/upload`;
+const cloudinaryName = import.meta.env.VITE_CLOUDNARY_NAME;
+const url = `https://api.cloudinary.com/v1_1/${cloudinaryName}/image/upload`;
 
 async function uploadImage(image) {
   const formData = new FormData();

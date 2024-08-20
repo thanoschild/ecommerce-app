@@ -1,15 +1,12 @@
 const expressAsyncHandler = require("express-async-handler");
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
 const cart = require("../models/cardProduct");
-const uploadPermission = require("../helper/permission");
+
 
 const addToCart = expressAsyncHandler(async (req, res) => {
   const { productId } = req?.body;
   const currUser = req.userId;
 
-  const isProductAvailable = await cart.findOne({ productId });
-  console.log("data: ", isProductAvailable);
+  const isProductAvailable = await cart.findOne({ productId, userId: currUser });
   if (isProductAvailable) {
     return res.json({
       message: "Already exist in the cart",
