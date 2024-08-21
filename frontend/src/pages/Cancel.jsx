@@ -1,13 +1,8 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import cancelGif from '../assest/cancel.gif';
 
 function Cancel() {
-    const navigate = useNavigate();
-
-    const handleGoHome = () => {
-      navigate('/');
-    };
   
     return (
       <div className="flex items-center justify-center h-screen bg-gradient-to-br from-red-100 to-red-300">
@@ -27,7 +22,6 @@ function Cancel() {
           </p>
           <Link
             to="/cart"
-            onClick={handleGoHome}
             className="p-2 px-3 mt-5 border-2 border-red-600 font-semibold text-red-600 hover:bg-red-600 hover:text-white rounded"
           >
             Go to Cart
