@@ -1,13 +1,8 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import paymentSuccessGif from '../assest/success.gif';
 
 function Success() {
-    const navigate = useNavigate();
-
-  const handleGoHome = () => {
-    navigate('/');
-  };
 
   return (
     <div className="flex items-center justify-center h-screen bg-gradient-to-br from-green-100 to-green-300">
@@ -27,7 +22,6 @@ function Success() {
         </p>
         <Link 
           to="/order"
-          onClick={handleGoHome}
           className="p-2 px-3 mt-5 border-2 border-green-600 rounded font-semibold text-green-600 hover:bg-green-600 hover:text-white"
         >
           see Order
