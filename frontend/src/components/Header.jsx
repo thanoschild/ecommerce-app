@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import Logo from "./Logo";
+import Logo from "../assest/ecommerce2.png";
 import { GrSearch } from "react-icons/gr";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { FaCartShopping } from "react-icons/fa6";
@@ -51,14 +51,15 @@ function Header() {
   return (
     <header>
       <div className="h-16 shadow-md bg-white fixed w-full z-40">
-        <div className="h-full container mx-auto flex items-center justify-between">
-          <div className="">
+        <div className="h-full container mx-auto flex items-center justify-between px-2">
+          <div className="flex items-center gap-2">
             {/* <Link to="/">
               <Logo w={90} h={50} />
             </Link> */}
             <Link to="/" className="font-bold text-3xl">
-              LOGO
+              <img src={Logo} alt="" className="w-16 h-12"/>
             </Link>
+            <p className="hidden lg:block font-semibold text-lg">Fast Shopping</p>
           </div>
           <div className="hidden lg:flex items-center w-full justify-between max-w-sm border rounded-full focus-within:shadow pl-2">
             <input
