@@ -38,6 +38,7 @@ const registerUser = expressAsyncHandler(async (req, res) => {
   });
 });
 
+
 // @desc Login a user
 // @route POST /api/users/login
 // @access public
@@ -69,6 +70,7 @@ const loginUser = expressAsyncHandler(async (req, res) => {
   const tokenOption = {
     httpOnly: true,
     secure: true,
+    sameSite: 'None'
   };
   res.cookie("token", accessToken, tokenOption).status(200).json({
     message: "Login successfully.",
@@ -77,6 +79,7 @@ const loginUser = expressAsyncHandler(async (req, res) => {
     error: false,
   });
 });
+
 
 // @desc user details
 // @route GET /api/users/login
@@ -91,11 +94,18 @@ const userDetails = expressAsyncHandler(async (req, res) => {
   });
 });
 
+
 // @desc Logout a user
 // @route GET /api/users/logout
 // @access public
 const userLogout = expressAsyncHandler(async (req, res) => {
-  res.clearCookie("token");
+  const tokenOption = {
+    httpOnly: true,
+    secure: true,
+    sameSite: 'None'
+  };
+
+  res.clearCookie("token", tokenOption);
   res.status(200).json({
     data: [],
     message: "Logged out successfully",
